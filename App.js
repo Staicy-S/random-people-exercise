@@ -11,25 +11,23 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
-      <SafeAreaView>
-        <View style={styles.container}>
-          {display === "ScrollViewUsers" ? (
-            <ScrollViewUsers />
-          ) : (
-            <FlatListUsers />
-          )}
-          <View style={{ flexDirection: "row" }}>
-            <ChangeDisplayButton
-              title="Scroll View"
-              onPress={() => setDisplay("ScrollViewUsers")}
-            />
-            <ChangeDisplayButton
-              title="List View"
-              onPress={() => setDisplay("FlatListUsers")}
-            />
-          </View>
-          <StatusBar style="auto" />
+      <SafeAreaView style={styles.container}>
+        {display === "ScrollViewUsers" ? (
+          <ScrollViewUsers />
+        ) : (
+          <FlatListUsers />
+        )}
+        <View style={{ flexDirection: "row" }}>
+          <ChangeDisplayButton
+            title="Scroll View"
+            onPress={() => setDisplay("ScrollViewUsers")}
+          />
+          <ChangeDisplayButton
+            title="List View"
+            onPress={() => setDisplay("FlatListUsers")}
+          />
         </View>
+        <StatusBar style="auto" />
       </SafeAreaView>
     </SafeAreaProvider>
   );
