@@ -22,21 +22,20 @@ export function ScrollViewUsers() {
   }, []);
 
   return (
-    <ScrollView
-      style={{
-        backgroundColor: "hotpink",
-        flex: 1,
-        width: "100%",
-      }}
-    >
+    <ScrollView style={styles.scrollviewContainer}>
       {displayPeople.map((person) => {
         return (
-          <View key={person.name.last} style={{ flexDirection: "row" }}>
+          <View
+            key={person.name.last}
+            style={{
+              flexDirection: "row",
+              alignItems: "center",
+            }}
+          >
             <Image style={styles.image} source={person.picture.large} />
             <View
               style={{
-                flexDirection: "column",
-                alignSelf: "center",
+                marginLeft: 30,
               }}
             >
               <Text style={styles.writtenContent}>
@@ -52,6 +51,12 @@ export function ScrollViewUsers() {
 }
 
 const styles = StyleSheet.create({
+  scrollviewContainer: {
+    backgroundColor: "hotpink",
+    flex: 1,
+    width: "100%",
+    padding: 10,
+  },
   writtenContent: {
     color: "white",
     padding: 2,
@@ -59,9 +64,9 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   image: {
+    marginVertical: 10,
     width: 100,
     height: 100,
-    backgroundColor: "black",
     borderRadius: 10,
   },
 });
