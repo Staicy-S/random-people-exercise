@@ -47,7 +47,6 @@ export function ScrollViewUsers() {
           </View>
         );
       })}
-      {displayPeople.name}
     </ScrollView>
   );
 }
