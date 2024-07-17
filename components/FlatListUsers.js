@@ -23,10 +23,11 @@ export function FlatListUsers() {
 
   return (
     <FlatList
+      style={styles.flatlistContainer}
       data={displayPeople}
       keyExtractor={(item) => item.email}
       renderItem={({ item }) => (
-        <View>
+        <View style={styles.parentView}>
           <Text style={styles.writtenContent}>
             {item.name.first} {item.name.last}
           </Text>
@@ -40,6 +41,17 @@ export function FlatListUsers() {
 }
 
 const styles = StyleSheet.create({
+  flatlistContainer: {
+    backgroundColor: "purple",
+    flex: 1,
+    width: "100%",
+    padding: 10,
+  },
+  parentView: {
+    borderWidth: 1,
+    padding: 10,
+    margin: 10,
+  },
   writtenContent: {
     color: "white",
     textAlign: "center",
@@ -50,5 +62,6 @@ const styles = StyleSheet.create({
     backgroundColor: "black",
     alignSelf: "center",
     borderRadius: 10,
+    margin: 5,
   },
 });
